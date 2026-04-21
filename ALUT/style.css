@@ -1,0 +1,144 @@
+/* Reset básico e tipografia */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Navegação */
+header {
+    background: #222;
+    padding: 1rem 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: right;
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;          /* Ativa o modo lado-a-lado */
+    align-items: center;    /* Alinha verticalmente ao centro */
+    min-height: 80vh;       /* Altura um pouco maior para destaque */
+    background: #f4f4f4;
+    overflow: hidden;       /* Garante que nada saia fora dos limites */
+}
+
+/* Coluna da Esquerda (Imagem) */
+.hero-image {
+    flex: 0 0 40%;          /* Ocupa exatamente 50% da largura */
+    height: 100%;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;      /* Faz a imagem preencher o espaço sem distorcer */
+    display: block;
+}
+
+/* Coluna da Direita (Texto) */
+.hero-content {
+    flex: 0 0 50%;          /* Ocupa os outros 50% */
+    padding: 0 5%;          /* Espaçamento interno para o texto não colar às bordas */
+    text-align: left;       /* Texto alinhado à esquerda nesta configuração */
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    text-align: center; /* Centraliza o parágrafo para melhor equilíbrio visual */
+    color: #666;
+}
+
+/* Responsividade: Em telemóveis, a imagem fica em cima e o texto em baixo */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+    }
+    .hero-image, .hero-content {
+        flex: 0 0 100%;
+    }
+    .hero-content {
+        padding: 40px 20px;
+        text-align: center;
+    }
+}
+
+/* Content Container */
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Formulário */
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background: #d35400;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Rodapé */
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+.social-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.social-links li {
+    margin: 0 10px;
+}
+
+.social-links a {
+    color: #ff9f43;
+    text-decoration: none;
+}
