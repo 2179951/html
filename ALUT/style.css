@@ -142,3 +142,76 @@ footer {
     color: #ff9f43;
     text-decoration: none;
 }
+
+/* Layout da Página ALUT */
+
+
+
+
+
+.alut-grid {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+    align-items: stretch; /* Garante que todas tenham a mesma altura */
+}
+
+.coluna {
+    flex: 1; /* Colunas 1 e 3 ocupam 1 "parte" */
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: relative; /* Necessário para o posicionamento do destaque */
+    overflow: hidden;   /* Garante que a imagem não saia das bordas arredondadas */
+}
+
+/* Coluna 2: Dobro do tamanho */
+.coluna.destaque {
+    flex: 2; /* Ocupa o dobro do espaço das outras */
+    padding: 0; /* Remove padding para a imagem encostar nas bordas */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white; /* Texto em branco para contrastar com a imagem */
+}
+
+/* Imagem de fundo da coluna 2 */
+.background-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+/* Conteúdo sobreposto à imagem */
+.overlay-conteudo {
+    position: relative;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.5); /* Fundo escuro semi-transparente para legibilidade */
+    padding: 30px;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.overlay-conteudo h2 {
+    color: #ff9f43; /* Cor de destaque para o título sobre o fundo escuro */
+    border: none;
+}
+
+/* Responsividade para ecrãs pequenos */
+@media (max-width: 768px) {
+    .alut-grid {
+        flex-direction: column;     /* Em telemóveis, as colunas empilham */
+    }
+}
